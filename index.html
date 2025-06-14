@@ -1,31 +1,139 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Página Web</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Líneo - Ecommerce</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <h1>¡Bienvenido a Mi Página Web! 👋</h1>
-    </header>
-    <main>
-        <section>
-            <h2>Sobre Mí</h2>
-            <p>Esta es mi primera página web creada con HTML y CSS, y alojada gratis en GitHub Pages. ¡Espero que te guste!</p>
-        </section>
-        <section>
-            <h2>Mis Proyectos</h2>
-            <ul>
-                <li>Proyecto 1: Un blog personal</li>
-                <li>Proyecto 2: Portafolio de fotografía</li>
-                <li>Proyecto 3: Una tienda en línea sencilla</li>
-            </ul>
-        </section>
-    </main>
-    <footer>
-        <p>&copy; 2025 - Mi Página Web</p>
-    </footer>
+<header>
+  <div class="container">
+    <div class="logo-contenedor">
+      <img src="assets/logo 1 white.png" alt="Logo pequeño" class="logo-img"/>
+      <div class="logo">Líneo</div>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#hero">Inicio</a></li>
+        <li><a href="#nosotros">Sobre Líneo</a></li>
+        <li><a href="#catalogo">Catálogo</a></li>
+        <li><a href="#carrito">Carrito</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+  <section class="hero" id="hero">
+    <div class="container">
+      <div class="hero-text">
+        <h1>Bienvenido a Líneo</h1>
+        <p>Tu marca de confianza en artículos de calidad y diseño minimalista, pensados para tu día a día.</p>
+        <p>En Líneo nos enfocamos en ofrecer productos funcionales con estética cuidada y atención personalizada. Cada artículo está diseñado para acompañarte con estilo y practicidad.</p>
+        <a href="#catalogo" class="btn-grande">Ver Catálogo</a>
+      </div>
+      <div class="hero-carousel">
+        <div class="carousel">
+          <img src="assets\c1.png" alt="Imagen 1">
+          <img src="assets\c2.png" alt="Imagen 2">
+          <img src="assets\c3.png" alt="Imagen 3">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="nosotros" id="nosotros">
+    <div class="container">
+      <h2>Sobre Líneo</h2>
+      <p>
+        Líneo nace con la visión de crear productos que no solo sean útiles, sino que también inspiren un estilo de vida minimalista y consciente. Creemos que el diseño y la funcionalidad pueden coexistir para mejorar tu experiencia diaria.
+
+Nuestro compromiso es con la calidad, sostenibilidad y atención al detalle. Cada producto es cuidadosamente seleccionado y probado para ofrecer lo mejor a nuestros clientes.
+      </p>
+      <div class="logo-centro">
+        <img src="assets\logo 1 black.png" alt="Logo grande" />
+      </div>
+    </div>
+  </section>
+
+  <section class="catalogo" id="catalogo">
+    <div class="container">
+      <h2>Catálogo</h2>
+      <div class="productos">
+        <div class="producto">
+          <img src="assets\trench coat.png" alt="Producto 1">
+          <h3>gabardina corta Zurich</h3>
+          <p>$2.469.115</p>
+          <button class="btn" onclick="agregarAlCarrito('gabardina corta Zurich', 2469115)">Agregar</button>
+        </div>
+        <div class="producto">
+          <img src="assets\prada.png" alt="Producto 2">
+          <h3>sandalias con triángulo esmaltado</h3>
+          <p>$5.920.865</p>
+          <button class="btn" onclick="agregarAlCarrito('sandalias con triángulo esmaltado', 5920865)">Agregar</button>
+        </div>
+        <div class="producto">
+          <img src="assets\shit d.png" alt="Producto 3">
+          <h3>playera T-Boxt</h3>
+          <p>$393.873</p>
+          <button class="btn" onclick="agregarAlCarrito('playera T-Boxt', 393873)">Agregar</button>
+        </div>
+        <div class="producto">
+          <img src="assets\shirt b.png" alt="Producto 4">
+          <h3>playera tipo polo Paddy</h3>
+          <p>$449.795</p>
+          <button class="btn" onclick="agregarAlCarrito('playera tipo polo Paddy', 449795)">Agregar</button>
+        </div>
+        <div class="producto">
+          <img src="assets\puff jacket.png" alt="Producto 5">
+          <h3>impermeable capitonado</h3>
+          <p>$831.771</p>
+          <button class="btn" onclick="agregarAlCarrito('impermeable capitonado', 831771)">Agregar</button>
+        </div>
+        <div class="producto">
+          <img src="assets\jeans 2.png" alt="Producto 6">
+          <h3>jeans Vast Cut</h3>
+          <p>$2.551.747</p>
+          <button class="btn" onclick="agregarAlCarrito('jeans Vast Cut', 2551747)">Agregar</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="carrito" id="carrito">
+    <div class="container">
+      <h2>Carrito de Compras</h2>
+      <ul id="lista-carrito"></ul>
+      <p id="total">Total: $0.00</p>
+      <button class="btn" onclick="vaciarCarrito()">Vaciar carrito</button>
+    </div>
+  </section>
+
+  <section class="contacto" id="contacto">
+    <div class="container">
+      <h2>Contacto</h2>
+      <form>
+        <label for="nombre">Nombre</label>
+        <input type="text" id="nombre" required>
+
+        <label for="email">Email</label>
+        <input type="email" id="email" required>
+
+        <label for="mensaje">Mensaje</label>
+        <textarea id="mensaje" rows="5" required></textarea>
+
+        <button type="submit" class="btn">Enviar</button>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Líneo. Todos los derechos reservados.</p>
+  </footer>
+
+  <script src="main.js"></script>
 </body>
 </html>
