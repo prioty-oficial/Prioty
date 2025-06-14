@@ -51,7 +51,7 @@ function renderizarCarrito() {
   document.getElementById("total").textContent = `Total: $${total.toFixed(2)}`;
 }
 
-// Animaciones de scroll (requiere clase .fade-in en HTML)
+// Animaciones de scroll
 document.addEventListener("DOMContentLoaded", () => {
   const faders = document.querySelectorAll(".fade-in");
   const options = {
@@ -70,4 +70,31 @@ document.addEventListener("DOMContentLoaded", () => {
   faders.forEach(el => {
     appearOnScroll.observe(el);
   });
+
+  // Activar sonido del video
+  setTimeout(() => {
+    const video = document.getElementById("video-fondo");
+    const botonSonido = document.getElementById("activar-sonido");
+
+    if (video && botonSonido) {
+      botonSonido.addEventListener("click", (e) => {
+        e.preventDefault();
+        video.muted = false;
+        video.volume = 1;
+
+        const playPromise = video.play();
+
+        if (playPromise !== undefined) {
+          playPromise
+            .then(() => {
+              botonSonido.style.display = "none";
+            })
+            .catch(error => {
+              console.error("Error al intentar reproducir el video:", error);
+              alert("Activa manualmente el sonido tocando el video si el navegador lo bloquea.");
+            });
+        }
+      });
+    }
+  }, 500); // Asegura que el DOM cargue antes de buscar elementos
 });
