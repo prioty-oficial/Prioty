@@ -8,135 +8,143 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
-<header>
-  <div class="container">
-    <div class="logo-contenedor">
-      <img src="assets/Logo.png" alt="Logo Prioty" class="logo-img"/>
-      <div class="logo">Prioty</div>
-    </div>
-    <nav>
-      <ul>
-        <li><a href="#hero">Inicio</a></li>
-        <li><a href="#nosotros">Sobre Prioty</a></li>
-        <li><a href="#catalogo">Catálogo</a></li>
-        <li><a href="#carrito">Carrito</a></li>
-        <li><a href="#contacto">Contacto</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
 
-<section class="hero fade-in" id="hero">
-  <div class="container">
-    <div class="hero-text">
-      <h1>Estilo que Impone Presencia</h1>
-      <p>Prioty es tu destino de moda premium para hombres. Elegancia, diseño exclusivo y calidad inigualable para quienes saben lo que quieren.</p>
-      <p>Cada prenda refleja sofisticación, vanguardia y un compromiso con lo excepcional. Viste Prioty, vive la distinción.</p>
-      <a href="#catalogo" class="btn-grande">Explorar Catálogo</a>
-    </div>
-    <div class="hero-carousel">
-      <div class="carousel">
-        <img src="assets/c1.png" alt="Imagen 1">
-        <img src="assets/c2.png" alt="Imagen 2">
-        <img src="assets/c3.png" alt="Imagen 3">
-      </div>
-    </div>
-  </div>
-</section>
+<!-- Video de fondo -->
+<div class="video-fondo">
+  <video id="video-fondo" autoplay loop muted playsinline>
+    <source src="assets/Fondo.mp4" type="video/mp4">
+    Tu navegador no soporta videos HTML5.
+  </video>
+  <button id="activar-sonido">🔊 Activar sonido</button>
+</div>
 
-<section class="nosotros fade-in" id="nosotros">
-  <div class="container">
-    <h2>Sobre Prioty</h2>
-    <p>
-      En Prioty diseñamos para el hombre moderno que busca impactar. Nuestras colecciones combinan lo atemporal con lo contemporáneo, ofreciendo piezas versátiles con identidad. 
-      Cada prenda es sinónimo de exclusividad, creada con materiales de alta gama y acabados que destacan.
-    </p>
-    <div class="logo-centro">
-      <img src="assets/Logo.png" alt="Logo Prioty" />
+<!-- Contenido principal -->
+<div class="contenido-principal">
+  <header>
+    <div class="container">
+      <div class="logo-contenedor">
+        <img src="assets/Logo.png" alt="Logo Prioty" class="logo-img"/>
+        <div class="logo">Prioty</div>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#hero">Inicio</a></li>
+          <li><a href="#nosotros">Sobre Prioty</a></li>
+          <li><a href="#catalogo">Catálogo</a></li>
+          <li><a href="#carrito">Carrito</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </nav>
     </div>
-  </div>
-</section>
+  </header>
 
-<section class="catalogo fade-in" id="catalogo">
-  <div class="container">
-    <h2>Catálogo Exclusivo</h2>
-    <div class="productos">
-      <!-- Producto 1 -->
-      <div class="producto shadow-hover">
-        <img src="assets/trench coat.png" alt="gabardina corta Zurich">
-        <h3>Gabardina corta Zurich</h3>
-        <p>$2.469.115</p>
-        <button class="btn" onclick="agregarAlCarrito('Gabardina corta Zurich', 2469115)">Agregar</button>
+  <section class="hero fade-in" id="hero">
+    <div class="container">
+      <div class="hero-text">
+        <h1>Estilo que Impone Presencia</h1>
+        <p>Prioty es tu destino de moda premium para hombres. Elegancia, diseño exclusivo y calidad inigualable para quienes saben lo que quieren.</p>
+        <p>Cada prenda refleja sofisticación, vanguardia y un compromiso con lo excepcional. Viste Prioty, vive la distinción.</p>
+        <a href="#catalogo" class="btn-grande">Explorar Catálogo</a>
       </div>
-      <!-- Producto 2 -->
-      <div class="producto shadow-hover">
-        <img src="assets/prada.png" alt="sandalias con triángulo esmaltado">
-        <h3>Sandalias con triángulo esmaltado</h3>
-        <p>$5.920.865</p>
-        <button class="btn" onclick="agregarAlCarrito('Sandalias con triángulo esmaltado', 5920865)">Agregar</button>
-      </div>
-      <!-- Producto 3 -->
-      <div class="producto shadow-hover">
-        <img src="assets/shit d.png" alt="playera T-Boxt">
-        <h3>Playera T-Boxt</h3>
-        <p>$393.873</p>
-        <button class="btn" onclick="agregarAlCarrito('Playera T-Boxt', 393873)">Agregar</button>
-      </div>
-      <!-- Producto 4 -->
-      <div class="producto shadow-hover">
-        <img src="assets/shirt b.png" alt="playera tipo polo Paddy">
-        <h3>Playera tipo polo Paddy</h3>
-        <p>$449.795</p>
-        <button class="btn" onclick="agregarAlCarrito('Playera tipo polo Paddy', 449795)">Agregar</button>
-      </div>
-      <!-- Producto 5 -->
-      <div class="producto shadow-hover">
-        <img src="assets/puff jacket.png" alt="impermeable capitonado">
-        <h3>Impermeable capitonado</h3>
-        <p>$831.771</p>
-        <button class="btn" onclick="agregarAlCarrito('Impermeable capitonado', 831771)">Agregar</button>
-      </div>
-      <!-- Producto 6 -->
-      <div class="producto shadow-hover">
-        <img src="assets/jeans 2.png" alt="jeans Vast Cut">
-        <h3>Jeans Vast Cut</h3>
-        <p>$2.551.747</p>
-        <button class="btn" onclick="agregarAlCarrito('Jeans Vast Cut', 2551747)">Agregar</button>
+      <div class="hero-carousel">
+        <div class="carousel">
+          <img src="assets/c1.png" alt="Imagen 1">
+          <img src="assets/c2.png" alt="Imagen 2">
+          <img src="assets/c3.png" alt="Imagen 3">
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="carrito fade-in" id="carrito">
-  <div class="container">
-    <h2>Carrito de Compras</h2>
-    <ul id="lista-carrito"></ul>
-    <p id="total">Total: $0.00</p>
-    <button class="btn" onclick="vaciarCarrito()">Vaciar carrito</button>
-  </div>
-</section>
+  <section class="nosotros fade-in" id="nosotros">
+    <div class="container">
+      <h2>Sobre Prioty</h2>
+      <p>
+        En Prioty diseñamos para el hombre moderno que busca impactar. Nuestras colecciones combinan lo atemporal con lo contemporáneo, ofreciendo piezas versátiles con identidad. 
+        Cada prenda es sinónimo de exclusividad, creada con materiales de alta gama y acabados que destacan.
+      </p>
+      <div class="logo-centro">
+        <img src="assets/Logo.png" alt="Logo Prioty" />
+      </div>
+    </div>
+  </section>
 
-<section class="contacto fade-in" id="contacto">
-  <div class="container">
-    <h2>Contacto</h2>
-    <form>
-      <label for="nombre">Nombre</label>
-      <input type="text" id="nombre" required>
+  <section class="catalogo fade-in seccion-fondo" id="catalogo">
+    <div class="container">
+      <h2>Catálogo Exclusivo</h2>
+      <div class="productos">
+        <!-- Productos aquí -->
+        <div class="producto shadow-hover">
+          <img src="assets/trench coat.png" alt="gabardina corta Zurich">
+          <h3>Gabardina corta Zurich</h3>
+          <p>$2.469.115</p>
+          <button class="btn" onclick="agregarAlCarrito('Gabardina corta Zurich', 2469115)">Agregar</button>
+        </div>
+        <div class="producto shadow-hover">
+          <img src="assets/prada.png" alt="sandalias con triángulo esmaltado">
+          <h3>Sandalias con triángulo esmaltado</h3>
+          <p>$5.920.865</p>
+          <button class="btn" onclick="agregarAlCarrito('Sandalias con triángulo esmaltado', 5920865)">Agregar</button>
+        </div>
+        <div class="producto shadow-hover">
+          <img src="assets/shit d.png" alt="playera T-Boxt">
+          <h3>Playera T-Boxt</h3>
+          <p>$393.873</p>
+          <button class="btn" onclick="agregarAlCarrito('Playera T-Boxt', 393873)">Agregar</button>
+        </div>
+        <div class="producto shadow-hover">
+          <img src="assets/shirt b.png" alt="playera tipo polo Paddy">
+          <h3>Playera tipo polo Paddy</h3>
+          <p>$449.795</p>
+          <button class="btn" onclick="agregarAlCarrito('Playera tipo polo Paddy', 449795)">Agregar</button>
+        </div>
+        <div class="producto shadow-hover">
+          <img src="assets/puff jacket.png" alt="impermeable capitonado">
+          <h3>Impermeable capitonado</h3>
+          <p>$831.771</p>
+          <button class="btn" onclick="agregarAlCarrito('Impermeable capitonado', 831771)">Agregar</button>
+        </div>
+        <div class="producto shadow-hover">
+          <img src="assets/jeans 2.png" alt="jeans Vast Cut">
+          <h3>Jeans Vast Cut</h3>
+          <p>$2.551.747</p>
+          <button class="btn" onclick="agregarAlCarrito('Jeans Vast Cut', 2551747)">Agregar</button>
+        </div>
+      </div>
+    </div>
+  </section>
 
-      <label for="email">Email</label>
-      <input type="email" id="email" required>
+  <section class="carrito fade-in seccion-fondo" id="carrito">
+    <div class="container">
+      <h2>Carrito de Compras</h2>
+      <ul id="lista-carrito"></ul>
+      <p id="total">Total: $0.00</p>
+      <button class="btn" onclick="vaciarCarrito()">Vaciar carrito</button>
+    </div>
+  </section>
 
-      <label for="mensaje">Mensaje</label>
-      <textarea id="mensaje" rows="5" required></textarea>
+  <section class="contacto fade-in seccion-fondo" id="contacto">
+    <div class="container">
+      <h2>Contacto</h2>
+      <form>
+        <label for="nombre">Nombre</label>
+        <input type="text" id="nombre" required>
 
-      <button type="submit" class="btn">Enviar</button>
-    </form>
-  </div>
-</section>
+        <label for="email">Email</label>
+        <input type="email" id="email" required>
 
-<footer>
-  <p>&copy; 2025 Prioty. Todos los derechos reservados.</p>
-</footer>
+        <label for="mensaje">Mensaje</label>
+        <textarea id="mensaje" rows="5" required></textarea>
+
+        <button type="submit" class="btn">Enviar</button>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Prioty. Todos los derechos reservados.</p>
+  </footer>
+</div>
 
 <script src="main.js"></script>
 </body>
