@@ -1,8 +1,8 @@
 body {
   margin: 0;
   font-family: 'Inter', sans-serif;
-  background-color: #FAFAF8;
-  color: #1C1C1C;
+  background-color: #000;
+  color: #fff;
 }
 
 .container {
@@ -12,12 +12,13 @@ body {
 }
 
 header {
-  background-color: #1C1C1C;
-  color: white;
+  background-color: #000;
+  color: #D4AF37;
   padding: 1rem 0;
   position: sticky;
   top: 0;
   z-index: 1000;
+  border-bottom: 1px solid #D4AF37;
 }
 
 header .container {
@@ -26,21 +27,6 @@ header .container {
   align-items: center;
 }
 
-.logo-area {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-}
-
-.logo-pequeño img {
-  width: 40px;
-  margin-right: 1rem;
-}
-
-.logo {
-  font-family: 'Playfair Display', serif;
-  font-size: 2rem;
-}
 .logo-contenedor {
   display: flex;
   align-items: center;
@@ -54,6 +40,7 @@ header .container {
 .logo {
   font-family: 'Playfair Display', serif;
   font-size: 2rem;
+  color: #D4AF37;
 }
 
 nav ul {
@@ -65,18 +52,18 @@ nav ul {
 }
 
 nav a {
-  color: white;
+  color: #fff;
   text-decoration: none;
   font-weight: 500;
   transition: color 0.3s;
 }
 
 nav a:hover {
-  color: #C5A880;
+  color: #D4AF37;
 }
 
 .hero {
-  background-color: #E6DED3;
+  background-color: #111;
   padding: 4rem 0;
 }
 
@@ -86,9 +73,6 @@ nav a:hover {
   justify-content: space-between;
   gap: 2rem;
 }
-.hero-carousel:hover .carousel {
-  animation-play-state: paused;
-}
 
 .hero-text {
   flex: 1;
@@ -96,13 +80,15 @@ nav a:hover {
 
 .hero-text h1 {
   font-family: 'Playfair Display', serif;
-  font-size: 2.8rem;
+  font-size: 3rem;
+  color: #D4AF37;
   margin-bottom: 1rem;
 }
 
 .hero-text p {
   font-size: 1.2rem;
   margin-bottom: 1.5rem;
+  color: #ddd;
 }
 
 .hero-carousel {
@@ -122,39 +108,39 @@ nav a:hover {
 .carousel img {
   width: 100%;
   height: 100%;
-  object-fit: contain; 
+  object-fit: contain;
   border-radius: 20px;
-  display: block;
   transition: transform 0.6s ease, filter 0.6s ease;
 }
+
 .carousel img:hover {
   transform: scale(1.08);
-  filter: brightness(1.15) contrast(1.05);
+  filter: brightness(1.2);
   cursor: pointer;
 }
 
 @keyframes slide {
-  0%   { transform: translateX(0); }
-  33%  { transform: translateX(0); }
-  34%  { transform: translateX(-500px); }
-  66%  { transform: translateX(-500px); }
-  67%  { transform: translateX(-1000px); }
+  0% { transform: translateX(0); }
+  33% { transform: translateX(0); }
+  34% { transform: translateX(-500px); }
+  66% { transform: translateX(-500px); }
+  67% { transform: translateX(-1000px); }
   100% { transform: translateX(-1000px); }
 }
 
 .btn, .btn-grande {
-  background-color: #1C1C1C;
-  color: white;
-  border: none;
+  background-color: transparent;
+  color: #D4AF37;
+  border: 2px solid #D4AF37;
   text-decoration: none;
   font-weight: 500;
   border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: all 0.3s ease;
 }
 
 .btn {
-  padding: 0.75rem 1.5rem;
+  padding: 0.6rem 1.4rem;
 }
 
 .btn-grande {
@@ -163,19 +149,24 @@ nav a:hover {
 }
 
 .btn:hover, .btn-grande:hover {
-  background-color: #333;
+  background-color: #D4AF37;
+  color: #000;
 }
+
 .nosotros {
   padding: 4rem 1rem;
-  background-color: white;
+  background-color: #0D0D0D;
   text-align: center;
 }
+
 .nosotros h2 {
   font-size: 2.5rem;
+  color: #D4AF37;
 }
 
 .nosotros p {
-  font-size: 1.3rem;
+  font-size: 1.2rem;
+  color: #ddd;
   line-height: 1.8;
 }
 
@@ -184,15 +175,16 @@ nav a:hover {
   width: 120px;
 }
 
-
 .catalogo {
   padding: 4rem 0;
-  background-color: #F5F5F5;
+  background-color: #000;
   text-align: center;
 }
 
 .catalogo h2 {
   font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  color: #D4AF37;
   margin-bottom: 2rem;
 }
 
@@ -201,24 +193,30 @@ nav a:hover {
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
 }
+
 .producto {
-  background-color: white;
+  background-color: #111;
   padding: 1rem;
-  border: 1px solid #E6DED3;
+  border: 1px solid #333;
   border-radius: 10px;
   text-align: center;
-  transition: box-shadow 0.3s;
-  height: 100%; /* Asegura expansión */
+  transition: transform 0.3s;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  color: #fff;
 }
+
 .producto h3 {
-  flex-grow: 1;
   font-size: 1rem;
+  color: #D4AF37;
+  flex-grow: 1;
 }
+
 .producto:hover {
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transform: scale(1.02);
+  box-shadow: 0 0 15px rgba(212, 175, 55, 0.2);
 }
 
 .producto img {
@@ -229,8 +227,12 @@ nav a:hover {
 
 .carrito {
   padding: 4rem 0;
-  background-color: white;
+  background-color: #0D0D0D;
   text-align: center;
+}
+
+.carrito h2 {
+  color: #D4AF37;
 }
 
 .carrito ul {
@@ -241,28 +243,53 @@ nav a:hover {
   text-align: left;
 }
 
-.carrito li {
+.carrito-item {
   padding: 0.5rem 0;
-  border-bottom: 1px solid #E6DED3;
+  border-bottom: 1px solid #333;
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
+  color: #fff;
 }
 
-input[type="number"] {
+.input-cantidad {
   width: 60px;
   padding: 0.3rem;
+  border: 1px solid #D4AF37;
+  background-color: transparent;
+  color: #fff;
+}
+
+.btn-eliminar {
+  background: none;
+  border: none;
+  color: #D4AF37;
+  cursor: pointer;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.btn-eliminar:hover {
+  color: #fff;
+}
+
+#total {
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  color: #D4AF37;
 }
 
 .contacto {
   padding: 4rem 0;
-  background-color: #E6DED3;
-  
+  background-color: #111;
 }
+
 .contacto h2 {
   text-align: center;
+  color: #D4AF37;
 }
+
 .contacto form {
   max-width: 600px;
   margin: 0 auto;
@@ -271,13 +298,22 @@ input[type="number"] {
   gap: 1rem;
 }
 
+.contacto input,
+.contacto textarea {
+  padding: 0.75rem;
+  border: 1px solid #D4AF37;
+  background-color: transparent;
+  color: #fff;
+}
+
 footer {
-  background-color: #1C1C1C;
-  color: white;
+  background-color: #000;
+  color: #D4AF37;
   text-align: center;
   padding: 1rem 0;
 }
-/* RESPONSIVE */
+
+/* Responsive */
 @media (max-width: 768px) {
   .hero .container {
     flex-direction: column;
@@ -292,14 +328,6 @@ footer {
 
   .logo {
     font-size: 1.5rem;
-  }
-
-  .nosotros h2 {
-    font-size: 2rem;
-  }
-
-  .nosotros p {
-    font-size: 1.1rem;
   }
 
   .carousel img {
