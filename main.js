@@ -1,4 +1,4 @@
-  const carrito = [];
+const carrito = [];
 
 function agregarAlCarrito(nombre, precio) {
   const producto = carrito.find(p => p.nombre === nombre);
@@ -32,14 +32,16 @@ function renderizarCarrito() {
 
   carrito.forEach((producto, index) => {
     const li = document.createElement("li");
+    li.classList.add("carrito-item");
     li.innerHTML = `
-      ${producto.nombre} - $${producto.precio} x 
-      <input type="number" min="1" value="${producto.cantidad}" onchange="actualizarCantidad(${index}, this.value)">
-      <button onclick="eliminarProducto(${index})">Eliminar</button>
+      <span class="producto-nombre">${producto.nombre}</span>
+      <span class="producto-precio">$${producto.precio.toLocaleString()}</span>
+      <input class="input-cantidad" type="number" min="1" value="${producto.cantidad}" onchange="actualizarCantidad(${index}, this.value)">
+      <button class="btn-eliminar" onclick="eliminarProducto(${index})">Eliminar</button>
     `;
     total += producto.precio * producto.cantidad;
     lista.appendChild(li);
   });
 
-  document.getElementById("total").textContent = `Total: $${total.toFixed(2)}`;
+  document.getElementById("total").textContent = `Total: $${total.toLocaleString()}`;
 }
