@@ -22,6 +22,45 @@ body {
   --transparente-negro: rgba(28, 28, 28, 0.85);
 }
 
+/* VIDEO DE FONDO */
+.video-fondo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.video-fondo video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.85);
+}
+
+/* BOTÓN SONIDO */
+#activar-sonido {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  z-index: 1001;
+  background-color: rgba(0,0,0,0.6);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+/* CONTENEDOR GENERAL */
+.contenido-principal {
+  position: relative;
+  z-index: 1;
+}
+
 /* HEADER */
 header {
   background-color: var(--negro);
@@ -76,8 +115,8 @@ nav a:hover {
 
 /* HERO */
 .hero {
-  background-color: var(--gris-claro);
   padding: 4rem 0;
+  color: var(--blanco);
 }
 
 .hero .container {
@@ -94,7 +133,7 @@ nav a:hover {
 .hero-text h1 {
   font-family: 'Playfair Display', serif;
   font-size: 2.8rem;
-  color: var(--negro);
+  color: var(--blanco);
   margin-bottom: 1rem;
 }
 
@@ -169,8 +208,11 @@ nav a:hover {
 /* SECCIÓN NOSOTROS */
 .nosotros {
   padding: 4rem 1rem;
-  background-color: var(--blanco);
+  background-color: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(4px);
   text-align: center;
+  border-radius: 16px;
+  margin: 2rem;
 }
 
 .nosotros h2 {
@@ -192,7 +234,6 @@ nav a:hover {
 /* CATÁLOGO */
 .catalogo {
   padding: 4rem 0;
-  background-color: var(--gris-claro);
   text-align: center;
 }
 
@@ -240,7 +281,6 @@ nav a:hover {
 /* CARRITO */
 .carrito {
   padding: 4rem 0;
-  background-color: var(--blanco);
   text-align: center;
 }
 
@@ -269,7 +309,6 @@ input[type="number"] {
 /* CONTACTO */
 .contacto {
   padding: 4rem 0;
-  background-color: var(--gris-claro);
 }
 
 .contacto h2 {
@@ -291,6 +330,15 @@ input[type="number"] {
   border: 1px solid #ddd;
   border-radius: 6px;
   font-family: inherit;
+}
+
+/* FONDO SEMITRANSPARENTE PARA SECCIONES */
+.seccion-fondo {
+  background-color: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(4px);
+  border-radius: 16px;
+  padding: 2rem 1rem;
+  margin: 2rem;
 }
 
 /* FOOTER */
@@ -336,4 +384,10 @@ footer {
   .carousel img {
     height: auto;
   }
+
+  .hero-carousel {
+    height: 300px;
+  }
 }
+
+
