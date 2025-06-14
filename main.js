@@ -16,13 +16,20 @@ function eliminarProducto(index) {
 }
 
 function actualizarCantidad(index, cantidad) {
-  carrito[index].cantidad = parseInt(cantidad) || 1;
+  const nuevaCantidad = parseInt(cantidad);
+  if (!isNaN(nuevaCantidad) && nuevaCantidad > 0) {
+    carrito[index].cantidad = nuevaCantidad;
+  } else {
+    carrito[index].cantidad = 1;
+  }
   renderizarCarrito();
 }
 
 function vaciarCarrito() {
-  carrito.length = 0;
-  renderizarCarrito();
+  if (confirm("¿Estás seguro de vaciar el carrito?")) {
+    carrito.length = 0;
+    renderizarCarrito();
+  }
 }
 
 function renderizarCarrito() {
@@ -32,16 +39,35 @@ function renderizarCarrito() {
 
   carrito.forEach((producto, index) => {
     const li = document.createElement("li");
-    li.classList.add("carrito-item");
     li.innerHTML = `
-      <span class="producto-nombre">${producto.nombre}</span>
-      <span class="producto-precio">$${producto.precio.toLocaleString()}</span>
-      <input class="input-cantidad" type="number" min="1" value="${producto.cantidad}" onchange="actualizarCantidad(${index}, this.value)">
-      <button class="btn-eliminar" onclick="eliminarProducto(${index})">Eliminar</button>
+      <span><strong>${producto.nombre}</strong> - $${producto.precio} x</span>
+      <input type="number" min="1" value="${producto.cantidad}" onchange="actualizarCantidad(${index}, this.value)">
+      <button onclick="eliminarProducto(${index})" class="btn">Eliminar</button>
     `;
     total += producto.precio * producto.cantidad;
     lista.appendChild(li);
   });
 
-  document.getElementById("total").textContent = `Total: $${total.toLocaleString()}`;
+  document.getElementById("total").textContent = `Total: $${total.toFixed(2)}`;
 }
+
+// Animaciones de scroll (requiere clase .fade-in en HTML)
+document.addEventListener("DOMContentLoaded", () => {
+  const faders = document.querySelectorAll(".fade-in");
+  const options = {
+    threshold: 0.1,
+    rootMargin: "0px 0px -50px 0px"
+  };
+
+  const appearOnScroll = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add("visible");
+      observer.unobserve(entry.target);
+    });
+  }, options);
+
+  faders.forEach(el => {
+    appearOnScroll.observe(el);
+  });
+});
